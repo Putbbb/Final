@@ -1,0 +1,137 @@
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #FFDB7D;
+    position: relative; /* Added for header positioning */
+}
+
+.header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.backLink {
+    padding-top: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.logo {
+    margin: 40px 0;
+    margin-top: -140px;
+}
+
+.logoImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.title {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vectorImg {
+    margin-bottom: -8px;
+    width: 16px; 
+    height: 26px; 
+}
+
+.searchBox {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    justify-content: center;
+    width: 100%;
+}
+
+.label {
+    margin-top: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.searchInput {
+    width: 400px;
+    padding: 10px 30px 10px 10px; /* Add right padding to make space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.searchIcon {
+    margin-right: 100px;
+    position: absolute;
+    right: 10px;
+    width: 15px;
+    height: 10px;
+    pointer-events: none; 
+    color: #6B6868;
+}
+
+.searchButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFA500;
+    color: #333;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.searchButton:hover {
+    background-color: #FF8C00;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    border-radius: 4px; /* Add border radius */
+    width: 79%; /* Ensure dropdown is the same width as input */
+    text-align: left;
+  }
+  
+  .dropdownItem {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .dropdownItem:hover {
+    background-color: #f0f0f0;
+  }
+
+  .keywordInfo {
+    width: 100%;
+    padding-left: 20px; /* Add padding for spacing */
+}

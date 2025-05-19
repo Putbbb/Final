@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  height: 100%;
+  background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+  padding: 20px;
+  gap: 20px;
+  overflow: auto;
+}
+
+.sidebar {
+  width: 240px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+
+.sidebar h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.sidebar h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 16px;
+  color: #333;
+}
+
+.main {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.searchBar {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.card label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card input,
+.card select,
+.card textarea {
+  width: 100%;
+  padding: 6px 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+}

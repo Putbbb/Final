@@ -1,0 +1,142 @@
+.signupContainer {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh; 
+  width: 100vw; 
+  background: linear-gradient(200deg, #1a1a2e, #282a36); 
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.leftSection {
+  width: 50%; 
+  margin-left: 200px; 
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 50px;
+  left: 50px; 
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.formWrapper {
+  max-width: 400px;
+}
+
+.h1 {
+  margin-bottom: 10px;
+}
+
+.p {
+  margin-bottom: 20px;
+  color: #a3a3a3;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+}
+
+.termsGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.termsGroup input {
+  margin-right: 10px;
+}
+
+.submitButton {
+  padding: 10px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 105%;
+  box-sizing: border-box;
+}
+
+.orDivider {
+  text-align: center;
+  margin: 20px 0;
+  color: #a3a3a3;
+}
+
+.googleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 105%;
+  box-sizing: border-box;
+}
+
+.googleButton img {
+  margin-right: 10px;
+}
+
+.rightSection {
+  width: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/pic/Frame signup.png') no-repeat center center;
+  background-size: cover; 
+}
+
+.rightImage {
+  display: none;
+}
+
+.message {
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.error {
+  color: #ff0000;
+}
+
+.success {
+  color: #008000;
+}

@@ -1,0 +1,1059 @@
+@font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('./fonts/IBMPlexSansThai-Thin.ttf') format('truetype');
+    font-weight: 100;
+  }
+  
+  @font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('./fonts/IBMPlexSansThai-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+  }
+  
+  @font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('./fonts/IBMPlexSansThai-Light.ttf') format('truetype');
+    font-weight: 300;
+  }
+  
+  @font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('./fonts/IBMPlexSansThai-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('./fonts/IBMPlexSansThai-Medium.ttf') format('truetype');
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('./fonts/IBMPlexSansThai-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: 'IBM Plex Sans Thai';
+    src: url('./fonts/IBMPlexSansThai-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+  
+  /* Ensure screen allows overflow visibility */
+  .screen {
+    position: relative;
+    overflow: visible;
+  }
+  
+  /* Sidebar styles remain the same */
+  .sidebar {
+    height: 100vh;
+    width: 12.6vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #FDBE1A;
+    overflow-x: hidden;
+    text-align: center;
+    padding: 24px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+  }
+
+  .backToSearch {
+    margin-top: auto; /* Push the button to the bottom */
+    padding: 7vh 0; /* Adjust padding as needed */
+  }
+  
+  .backToSearchImg {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .sidebarP {
+    font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 46.2px;
+    text-align: left;
+    padding-bottom: 40%;
+  }
+  
+  .sidebarA {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    justify-content: center;
+  }
+
+  .sidebarImg {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+}
+  
+  .sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebarA {
+    font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+    font-weight: 400;
+    display: block;
+    text-decoration: none;
+    padding: 0px 20px 0px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .sidebarA:hover {
+    background-color: #FF8C00; /* Darker orange on hover */
+  }
+
+ 
+  
+  /* Ensure dash allows overflow visibility */
+  .dash {
+    background-color: #FFDB7D;
+    display: flex;
+    flex-direction: column;
+    align-content: baseline;
+    overflow: visible;
+    z-index: 2;
+  }
+  
+  /* Ensure header allows overflow visibility */
+  .header {
+    overflow: visible;
+    height: 9.907vh;
+    width: 84.9vw; /* Adjust width to fit the header properly */
+    position: fixed;
+    top: 0;
+    left: 15.1vw;
+    background-color: #FFDB7D;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .Dashboard {
+    color: black;
+    font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+    font-size: 32px;
+    padding-left: 50px;
+    margin-right: auto; /* Push the title to the left */
+  }
+
+  .runNameFont {
+    color: black;
+    font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+    font-size: 32px;
+    /* padding-left: 50px; */
+    /* margin-right: auto; */
+  }
+
+  
+  /* Dropdown styles */
+  .dropdown {
+    padding-right: 50px;
+    position: relative;
+    display: inline-block;
+    z-index: 1000;
+  }
+  
+  .dropbtn {
+    background-color: transparent; /* Make the button background transparent */
+    border: none;
+    padding: 0; /* Remove padding */
+    cursor: pointer;
+  }
+  
+  .dropbtnImg {
+    width: 40px; /* Adjust the size of the image as needed */
+    height: 40px; /* Adjust the size of the image as needed */
+    border-radius: 50%;
+  }
+  
+  .dropdownContent {
+    width: 250px; /* Adjusted width */ /* Adjusted border-radius */
+    display: none;
+    border-radius: 20px 20px 20px 20px;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+  }
+  
+  .accountProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #FDBE1A;
+    border-radius: 20px 20px 0px 0px;
+    
+  }
+  
+  .profileImg {
+    /* border: 1px solid black; */
+    border-radius: 50%; /* Make the profile image round */
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .dropdownContent p {
+    font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+    font-weight: 400;
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .dropdownContent a {
+    font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #F9F3D3;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .Logout {
+    border-radius: 0px 0px 20px 20px;
+  }
+  
+  .dropdownContent a:hover {
+    background-color: #E5E0C2;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  /* Header image and text */
+  .header img {
+    background-color: white;
+    color: black;
+    height: 60px;
+    width: 60px;
+  }
+  
+  .header h1 {
+    color: black;
+    font-family: 'IBMPlexSansThai';
+    font-size: 32px;
+    padding-left: 50px;
+    margin-right: auto; /* Push the title to the left */
+  }
+  
+  .runName {
+    overflow: visible;
+    height: 9.259vh;
+    width: 84.9vw; /* Adjust width to fit the runName properly */
+    position: fixed;
+    top: 9.907vh;
+    left: 15.1vw;
+    background-color: #E4E3C7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    /* border: 2px solid black; */
+  }
+  
+  .runName h1 {
+    margin-left: 50px;
+  }
+  
+  .runName select {
+    margin-right: 50px;
+  }
+  
+  /* Ensure the select box is styled properly */
+.selectLast {
+  color: black;
+  font-family: 'IBMPlexSansThai';
+  position: relative;
+  display: block;
+  width: 12em;
+  height: 2em;
+  border-radius: 0.25em;
+  font-size: 16px;
+  text-align: center; /* Center align text */
+  padding-left: 0.5em; /* Adjust padding if necessary */
+}
+
+/* Remove default arrow appearance */
+.selectLast::-ms-expand {
+  display: none;
+}
+
+/* Custom arrow styling */
+.selectLast::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+
+.customOption {
+  color: black;
+  font-family: 'IBMPlexSansThai';
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.selectLast:hover::after {
+  color: #f39c12;
+}
+
+.selectLast option:checked {
+  display: none;
+}
+  
+  .board {
+    overflow: visible; /* Allow overflow in board */
+    height: 100vh;
+    width: 84.8vw;
+    position: fixed;
+    top: 0;
+    left: 15.1vw;
+    margin-top: 19.159vh;
+    background-color: #EAE9E5;
+    z-index: 0;
+  }
+  
+  .boardHashUp {
+    display: grid;
+    justify-content: center;
+    height: 13vh;
+    grid-template-columns: 16.1vw 16.1vw 16.1vw 16.1vw 16.1vw;
+    grid-template-rows: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .boardHashUpdiv {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 20px 20px 40px;
+    height: 60.25vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+  
+    /* border: 2px solid black; */
+  }
+  
+  .sourcetype {
+    font-family: 'IBM Plex Sans Thai';
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 52.8px;
+    text-align: left;
+  }
+  
+  .boardHashDown {
+    /* border: 2px solid black; */
+    padding: 0px 20px 0px 20px;
+    height: 66vh;
+    display: grid;
+    grid-template-columns: 40% auto;
+    gap: 10px;
+  }
+  
+  .boardHashDownColumn {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: auto;
+    /* grid-template-rows: 32.25% 32.25% 32.25%; */
+    grid-template-rows: 20.8vh 20.8vh 20.8vh;
+    gap: 10px;
+    /* border: 2px solid black; */
+  }
+  
+  .boardHashDowndiv {
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 20px;
+    /* border: 2px solid black; */
+  }
+  
+  .boardHashUpdivData {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 30% auto;
+    /* border: 2px solid black; */
+  }
+  
+  .boardHashdivDataVisual {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .DataImgMention {
+    height: 35px;
+    width: 35px;
+    padding: 10px;
+    /* border: 2px solid black; */
+    background-color: #F9C0FA;
+    border-radius: 50%;
+  }
+  
+  .DataImgSmile {
+    height: 35px;
+    width: 35px;
+    padding: 10px;
+    /* border: 2px solid black; */
+    background-color: #CCFAC0;
+    border-radius: 50%;
+  }
+  
+  .DataImgSad {
+    height: 35px;
+    width: 35px;
+    padding: 10px;
+    /* border: 2px solid black; */
+    background-color: #FFAEAE;
+    border-radius: 50%;
+  }
+  
+  .DataImgWifi {
+    height: 35px;
+    width: 35px;
+    padding: 10px;
+    /* border: 2px solid black; */
+    background-color: #AEFAFF;
+    border-radius: 50%;
+  }
+  
+  .DataImgNonWifi {
+    height: 35px;
+    width: 35px;
+    padding: 10px;
+    /* border: 2px solid black; */
+    background-color: #FFC6AE;
+    border-radius: 50%;
+  }
+  
+  .mentionNumber,
+  .positiveNumber,
+  .negativeNumber {
+    font-family: 'IBM Plex Sans Thai';
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 59.4px;
+  }
+  
+  .mentionFont {
+    font-family: 'IBM Plex Sans Thai';
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26.4px;
+  }
+  
+  .positiveNumber {
+    font-family: 'IBM Plex Sans Thai';
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 59.4px;
+    color: #00d348;
+  }
+  
+  .negativeNumber {
+    font-family: 'IBM Plex Sans Thai';
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 59.4px;
+    color: #d30000;
+  }
+  
+  .centerGraph {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hashLineGraph {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* align-items: center; */
+  
+    justify-content: space-around;
+    /* border: 2px solid     black; */
+  }
+  
+  .numMention {
+    /* border: 2px solid black; */
+    font-family: 'IBM Plex Sans Thai';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 39.6px;
+    text-align: left;
+  }
+  
+  @media only screen and (max-width: 1680px) and (max-height: 1050px) {
+    .board {
+      left: 15.3vw;
+    }
+  
+    .DataImgMention,
+    .DataImgSmile,
+    .DataImgSad,
+    .DataImgWifi,
+    .DataImgNonWifi {
+      height: 30px;
+      width: 30px;
+    }
+  
+    .mentionFont {
+      font-size: 14px;
+    }
+  
+    .mentionNumber,
+    .positiveNumber,
+    .negativeNumber,
+    .positiveNumber,
+    .negativeNumber {
+      font-size: 30px;
+    }
+  }
+  
+  @media only screen and (max-width: 1600px) and (max-height: 900px) {
+    .board {
+      overflow: visible; /* Allow overflow in board */
+      height: 100vh;
+      width: 84.8vw;
+      position: fixed;
+      top: 0;
+      left: 15.4vw;
+      margin-top: 19.159vh;
+      background-color: #eae9e5;
+      z-index: 0;
+    }
+  
+    .boardHashUp {
+      display: grid;
+      justify-content: center;
+      height: 13vh;
+      grid-template-columns: 16vw 16vw 16vw 16vw 16vw;
+      grid-template-rows: auto;
+      gap: 10px;
+      padding: 10px;
+      padding-top: 15px;
+      /* border: 2px solid black; */
+    }
+  
+    .Dashboard {
+      color: black;
+      font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+      font-size: 28px;
+      padding-left: 50px;
+      margin-right: auto; /* Push the title to the left */
+    }
+  
+    .boardHashUpdiv {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px 20px 20px 40px;
+      height: 57.25vh;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+      /* border: 2px solid black; */
+    }
+  
+    .centerGraph {
+      height: 52vh;
+      width: 28vw;
+      display: flex;
+      justify-content: center;
+      /* border: 2px solid black; */
+    }
+  
+    .boardHashDownColumn {
+      overflow: visible;
+      display: grid;
+      grid-template-columns: auto;
+      /* grid-template-rows: 32.25% 32.25% 32.25%; */
+      grid-template-rows: 20.05vh 20.05vh 20.05vh;
+      gap: 10px;
+      /* border: 2px solid black; */
+    }
+  
+    .mentionNumber,
+    .positiveNumber,
+    .negativeNumber {
+      font-family: 'IBM Plex Sans Thai';
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 50.4px;
+    }
+  
+    .mentionFont {
+      font-family: 'IBM Plex Sans Thai';
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 26.4px;
+    }
+  
+    .hashLineGraph {
+      display: flex;
+      flex-direction: column;
+  
+      /* align-items: center; */
+  
+      justify-content: space-around;
+      /* border: 2px solid black; */
+    }
+  
+    .boardHashDown {
+      /* border: 2px solid black;    */
+      padding: 0px 20px 0px 20px;
+      height: 66vh;
+      display: grid;
+      grid-template-columns: 40% auto;
+      gap: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 1440px) and (max-height: 900px) {
+    .sidebar p {
+      font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 46.2px;
+      text-align: left;
+      padding-bottom: 40%;
+    }
+  
+    .boardHashDownColumn {
+      overflow: visible;
+      display: grid;
+      grid-template-columns: auto;
+      /* grid-template-rows: 32.25% 32.25% 32.25%; */
+      grid-template-rows: 20vh 20vh 20vh;
+      gap: 10px;
+      /* border: 2px solid black; */
+    }
+  
+    .boardHashUp {
+      display: grid;
+      justify-content: center;
+      height: 13vh;
+      grid-template-columns: 15.85vw 15.85vw 15.85vw 15.85vw 15.85vw;
+      grid-template-rows: auto;
+      gap: 10px;
+      padding: 10px;
+      padding-top: 15px;
+    }
+  
+    .mentionFont {
+      font-family: 'IBM Plex Sans Thai';
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 26.4px;
+    }
+  
+    .mentionNumber,
+    .positiveNumber,
+    .negativeNumber {
+      font-family: 'IBM Plex Sans Thai';
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 50.4px;
+    }
+  
+    .DataImgNonWifi {
+      height: 30px;
+      width: 30px;
+      padding: 10px;
+      /* border: 2px solid black; */
+      background-color: #ffc6ae;
+      /* justify-content: center; */
+      margin-right: 10px;
+    }
+  
+    .DataImgWifi {
+      height: 30px;
+      width: 30px;
+    }
+  
+    .DataImg {
+      height: 50px;
+      width: 50px;
+    }
+  }
+  
+  @media only screen and (max-width: 1400px) and (max-height: 1050px) {
+    .board {
+      left: 15.6vw;
+    }
+  
+    .boardHashUp {
+      display: grid;
+      justify-content: center;
+      height: 13vh;
+      grid-template-columns: 15.8vw 15.8vw 15.8vw 15.8vw 15.8vw;
+      grid-template-rows: auto;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .mentionFont {
+      font-size: 14px;
+    }
+  
+    .DataImgWifi {
+      height: 21px;
+      width: 21px;
+    }
+  
+    .DataImgNonWifi {
+      height: 21px;
+      width: 21px;
+    }
+  
+    .sidebar p {
+      font-size: 26.8px;
+    }
+  
+    .mentionNumber,
+    .positiveNumber,
+    .negativeNumber {
+      font-size: 25px;
+    }
+  }
+  
+  @media only screen and (max-width: 1366px) and (max-height: 768px) {
+    .mentionFont {
+      font-size: 12px;
+    }
+  
+    /* .boardHashUp {
+          border: 2px solid black;
+      } */
+  
+    .DataImgMention,
+    .DataImgSmile,
+    .DataImgSad,
+    .DataImgWifi,
+    .DataImgWifi {
+      height: 20px;
+      width: 20px;
+    }
+  
+    .sidebar p {
+      font-size: 26px;
+    }
+  }
+  
+  @media only screen and (max-width: 1280px) and (max-height: 1024px) {
+    .DataImgMention,
+    .DataImgSmile,
+    .DataImgSad,
+    .DataImgWifi,
+    .DataImgWifi {
+      height: 18px;
+      width: 18px;
+    }
+  
+    .sidebar p {
+      font-size: 24px;
+    }
+  
+    .mentionNumber,
+    .positiveNumber,
+    .negativeNumber {
+      font-size: 22px;
+      /* margin-bottom: -10px; */
+    }
+  
+    .mentionFont {
+      /* top: 25px; */
+      font-size: 14px;
+      /* border: 2px solid black; */
+      /* font-weight: bold; */
+      /* margin-top: 0px; */
+    }
+  
+    .boardHashUp {
+      display: grid;
+      justify-content: center;
+      height: 15vh;
+      grid-template-columns: 15.8vw 15.8vw 15.8vw 15.8vw 15.8vw;
+      grid-template-rows: auto;
+      gap: 10px;
+      padding: 10px;
+      /* border: 2px solid black; */
+    }
+  }
+  
+  @media only screen and (max-width: 1280px) and (max-height: 768px) {
+    .boardHashDownColumn {
+      overflow: visible;
+      display: grid;
+      grid-template-columns: auto;
+      /* grid-template-rows: 32.25% 32.25% 32.25%; */
+      grid-template-rows: 19.8vh 19.8vh 19.8vh;
+      gap: 10px;
+      /* border: 2px solid black; */
+    }
+  
+    .boardHashUpdiv {
+      height: 56.8vh;
+    }
+  }
+  
+  @media only screen and (max-width: 1280px) and (max-height: 720px) {
+    .boardHashUp {
+      display: grid;
+      justify-content: center;
+      height: 13vh;
+      grid-template-columns: 15.5vw 15.5vw 15.5vw 15.5vw 15.5vw;
+      grid-template-rows: auto;
+      gap: 10px;
+      padding: 10px;
+      margin-bottom: 8px;
+    }
+  }
+  
+  @media only screen and (max-width: 1152px) and (max-height: 864px) {
+    .board {
+      left: 16.1vw;
+    }
+  
+    .boardHashUp {
+      grid-template-columns: 15.55vw 15.55vw 15.55vw 15.55vw 15.55vw;
+    }
+  
+    .mentionNumber,
+    .positiveNumber,
+    .negativeNumber {
+      font-size: 20.5px;
+    }
+  
+    .sidebar p {
+      font-size: 22px;
+    }
+  }
+  
+  @media only screen and (max-width: 1280px) and (max-height: 600px) {
+    .boardHashUpdiv {
+      margin-top: 20px;
+      height: 51vh;
+    }
+  
+    .centerGraph {
+      height: 42vh;
+    }
+  
+    .boardHashDownColumn {
+      overflow: visible;
+      display: grid;
+      grid-template-columns: auto;
+      margin-top: 20px;
+      /* grid-template-rows: 32.25% 32.25% 32.25%; */
+      grid-template-rows: 18.1vh 18.1vh 18.1vh;
+      gap: 10px;
+      /* border: 2px solid black; */
+    }
+  
+    .numMention {
+      font-size: 18px;
+    }
+
+    
+  }
+  
+  @media only screen and (max-width: 1024px) and (max-height: 768px) {
+    .sidebar p {
+      font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 46.2px;
+      text-align: left;
+      padding-bottom: 40%;
+    }
+  
+    .board {
+      overflow: visible; /* Allow overflow in board */
+      height: 100vh;
+      width: 84.8vw;
+      position: fixed;
+      top: 0;
+      left: 16.3vw;
+      margin-top: 19.159vh;
+      background-color: #eae9e5;
+      z-index: 0;
+    }
+  
+    .boardHashUp {
+      display: grid;
+      justify-content: center;
+      height: 13vh;
+      grid-template-columns: 15.4vw 15.4vw 15.4vw 15.4vw 15.4vw;
+      grid-template-rows: auto;
+      gap: 10px;
+      padding: 10px;
+      padding-top: 15px;
+    }
+  
+    .sourcetype {
+      font-family: 'IBM Plex Sans Thai';
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 52.8px;
+      text-align: left;
+      /* border: 2px solid black; */
+      margin-left: -20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .centerGraph {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* border: 2px solid black; */
+      margin-left: -20px;
+      margin-top: -20px;
+    }
+  
+    .DataImgWifi {
+      height: 20px;
+      width: 20px;
+      margin-left: -10px;
+    }
+  
+    .DataImgNonWifi {
+      height: 20px;
+      width: 20px;
+    }
+  
+    .DataImg {
+      height: 40px;
+      width: 40px;
+    }
+  
+    .mentionNumber,
+    .positiveNumber,
+    .negativeNumber {
+      font-size: 16px;
+    }
+  
+    .mentionFont {
+      font-size: 8px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) and (max-height: 600px) {
+    .board {
+      overflow: visible; /* Allow overflow in board */
+      height: 100vh;
+      width: 84.8vw;
+      position: fixed;
+      top: 0;
+      left: 17vw;
+      margin-top: 19.159vh;
+      background-color: #eae9e5;
+      z-index: 0;
+    }
+  
+    .boardHashUp {
+      display: grid;
+      justify-content: center;
+      height: 13vh;
+      grid-template-columns: 15.4vw 15.4vw 15.4vw 15.4vw 15.4vw;
+      grid-template-rows: auto;
+      gap: 10px;
+      padding: 10px;
+      padding-top: 15px;
+    }
+  
+    .sourcetype {
+      font-family: 'IBM Plex Sans Thai';
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 52.8px;
+      text-align: left;
+      /* border: 2px solid black; */
+      margin-left: -20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .centerGraph {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* border: 2px solid black; */
+      margin-left: -20px;
+      margin-top: -20px;
+    }
+  
+    .DataImgWifi,
+    .DataImgMention,
+    .DataImgSmile,
+    .DataImgSad,
+    .DataImgNonWifi {
+      height: 12px;
+      width: 12px;
+    }
+  
+    .boardHashUp {
+      grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
+    }
+  
+    .mentionNumber,
+    .positiveNumber,
+    .negativeNumber {
+      font-size: 13px;
+    }
+  
+    .mentionFont {
+      font-size: 10px;
+    }
+  
+    .numMention {
+      font-size: 15px;
+    }
+  
+    .sidebar p {
+      font-size: 15.3px;
+    }
+  }
+  

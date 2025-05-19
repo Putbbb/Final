@@ -1,0 +1,152 @@
+.loginContainer {
+  display: flex;
+  min-height: 100vh; 
+  height: 100%; 
+  width: 100%; 
+  background: linear-gradient(135deg, #1a1a2e, #282a36); 
+  color: #fff;
+  position: absolute; 
+  top: 0;
+  left: 0;
+}
+
+.leftSection {
+  position: absolute;
+  top: 170px; 
+  left: 350px; 
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+}
+
+.header {
+  position: absolute;
+  top: 50px;
+  left: 50px; 
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  color: #8692A6; 
+  margin-bottom: 50px;
+}
+.formContainer {
+  width: 100%; 
+}
+
+.formGroup {
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 150%;
+  padding: 0.75rem; 
+  margin-top: 0.5rem;
+  border: 2px solid #8692A6; 
+  border-radius: 8px; 
+  background-color: #282A2F; 
+  color: #fff;
+  font-size: 1rem; 
+  box-sizing: border-box; 
+  outline: none; 
+  transition: border-color 0.3s ease; 
+}
+
+.input:focus {
+  border-color: #4a90e2; 
+}
+
+.termsGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.termsGroup input {
+  margin-right: 0.5rem;
+}
+
+.error {
+  color: red;
+  margin: 0.5rem 0;
+}
+
+.loginButton {
+  width: 150%; 
+  padding: 0.75rem;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 8px; 
+  cursor: pointer;
+}
+
+.orDivider {
+  margin: 1rem 0;
+  text-align: center;
+  color: #fff;
+}
+.googleButton {
+  width: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.googleButton img {
+  margin-right: 0.5rem;
+
+}
+
+.rightSection {
+  flex: 1; 
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center; 
+  padding: 2rem; 
+  margin-left: 350px;
+}
+
+.decorativeImage {
+  width: 60%;
+  max-height: 70%;
+  object-fit: contain;
+  border-radius: 50%; 
+  overflow: hidden; 
+}

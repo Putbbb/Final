@@ -1,0 +1,620 @@
+/* authenPage.css */
+
+/* body {
+    background-color: #FFDD6C; 
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  } */
+
+  .visualContainer {
+    flex: 1; /* Ensure it takes available space */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center visuals horizontally */
+    align-items: center; /* Align visuals vertically */
+    gap: 20px; /* Add spacing between visuals */
+    max-width: 50%; /* Restrict the width of the visuals */
+  }
+  
+  .shape1,
+  .shape2,
+  .shape3,
+  .shape4 {
+    position: relative;
+    max-width: 1000px; /* Adjust based on size */
+    height: auto;
+  }
+  
+  .shape1 {
+    top: 350px;
+    right: -130px;
+    position: relative;
+    transform: scale(0.95);
+  }
+  
+  .shape2 {
+    top: 60px;
+    left: 320px;
+    position: relative;
+    transform: scale(0.85);
+  }
+  
+  .shape3 {
+    top: -270px;
+    left: -100px;
+    position: relative;
+    transform: scale(0.85); /* Slightly enlarge */
+  }
+  
+  .shape4 {
+    top: -700px;
+    right: 300px;
+    position: relative;
+    transform: scale(1); /* Slightly enlarge */
+  }
+  
+  
+  /* form {
+    background-color: #FFE084; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;a
+  } */
+  .bar {
+    height: 60px;
+    width: 100%;
+    padding: 25px 20px; /* Adjust padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure space between items */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .bar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center; /* Ensure vertical alignment */
+    gap: 0; /* Spacing between menu items */
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+  
+  .bar ul li {
+    margin: 0;
+    padding: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #333;
+  }
+  
+  .bar ul li:hover {
+    color: #8d309d;
+  }
+  
+
+  .getStartedButton {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 7px 5px; /* Add padding for size */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 14px; /* Adjust font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-transform: uppercase; /* Capitalize all text */
+    margin-left: 15px; /* Add spacing from the Login link */
+    margin-top: -5px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .getStartedButton:hover {
+    background-color: #9827ae; /* Darker shade on hover */
+  }
+
+  .mainContent {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Text on the left and visuals on the right */
+    padding: 50px 100px; /* Add padding for space */
+    height: 100vh; /* Make sure it takes the full height of the viewport */
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .textContent {
+    flex: 1; /* Take up available space */
+    max-width: 40%; /* Restrict the width of the text */
+    margin-right: 50px; /* Add spacing between text and visuals */
+    text-align: left; /* Ensure text aligns to the left */
+    color: black;
+  }
+  
+  .textContent h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .textContent p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .textContent .getStartedButton {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  .textContent .getStartedButton:hover {
+    background-color: #9827ae;
+  }
+  
+
+  .logoPic {
+    width: 72px;
+    height: 51px;
+    cursor: pointer;
+    padding: 5px 80px;
+  }
+  
+  .h1Message {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .loginBox {
+    margin-top: 20px;
+    width: 400px; 
+  }
+  
+  .Email, .Password {
+    margin-bottom: 20px;
+  }
+  
+  .business, .passwd {
+    text-align: left;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .inputStyles{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button.Submit {
+    background-color: #FFA500; /* Orange color for button */
+    color: #333;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button.Submit:hover {
+    background-color: #FF8C00; /* Darker orange on hover */
+  }
+  
+  .error {
+    margin-top: 10px;
+    color: red;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -20px;
+  }
+
+  .createAccountButton {
+    background-color: #59BD3D; /* Green color for button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Adjust as needed */
+  }
+
+  .forgotPasswordButton {
+    background-color: transparent;
+    color: #0173F1; /* Blue color for button */
+    border: none;
+    padding-left: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+    float: right;
+  }
+
+  .forgotPasswordButton:hover {
+    color: #0277BD; /* Darker blue on hover */
+  }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFDD6C;
+  }
+  @media (min-width: 768px) {
+    .mainContent {
+      flex-direction: row; /* Side-by-side layout for larger screens */
+      padding: 50px 100px;
+    }
+  
+    .textContent {
+      max-width: 400px; /* Limit the width for better readability */
+      margin-right: 50px;
+      text-align: left; /* Align text to the left on larger screens */
+    }
+  
+    .visualContainer {
+      max-width: 600px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .mainContent {
+      flex-direction: column;
+      overflow: hidden; /* Stack text and visuals vertically */
+    }
+  
+    .textContent {
+      margin-top: 100px; /* Add space below the text section */
+      margin-right: 400px;
+    }
+    .textContent h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .textContent p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .textContent .getStartedButton {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin-left: -5px;
+      font-size: 14px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+  
+    .visualContainer {
+      flex: 1; /* Ensure it takes available space */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center visuals horizontally */
+      align-items: center; /* Align visuals vertically */
+      gap: 20px; /* Add spacing between visuals */
+      max-width: 50%; /* Restrict the width of the visuals */
+    }
+    
+    .shape1,
+    .shape2,
+    .shape3,
+    .shape4 {
+      position: relative;
+      max-width: 500px; /* Adjust based on size */
+      height: auto;
+    }
+    
+    .shape1 {
+      top: -480px;
+      right: -140px;
+      position: relative;
+      transform: scale(0.8);
+    }
+    
+    .shape2 {
+      top: -770px;
+      left: 260px;
+      position: relative;
+      transform: scale(0.6);
+    }
+    
+    .shape3 {
+      top: -1040px;
+      left: -30px;
+      position: relative;
+      transform: scale(0.5); /* Slightly enlarge */
+    }
+    
+    .shape4 {
+      top: -1615px;
+      right: 40px;
+      position: relative;
+      transform: scale(0.6); /* Slightly enlarge */
+    }
+    
+  }
+  
+  @media (max-width: 550px) {
+    .mainContent {
+      flex-direction: column;
+      overflow: hidden; /* Stack text and visuals vertically */
+      width: 160%;
+    }
+    .textContent {
+      margin-top: 60px; /* Add space below the text section */
+      margin-right: 420px;
+    }
+    .textContent h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .textContent p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .textContent .getStartedButton {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin-left: -5px;
+      font-size: 14px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+  
+    .visualContainer {
+      flex: 1; /* Ensure it takes available space */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center visuals horizontally */
+      align-items: center; /* Align visuals vertically */
+      gap: 20px; /* Add spacing between visuals */
+      max-width: 50%; /* Restrict the width of the visuals */
+    }
+    
+    .shape1,
+    .shape3 {
+      position: relative;
+      max-width: 500px; /* Adjust based on size */
+      height: auto;
+    }
+    
+    .shape1 {
+      top: -115px;
+      right: 250px;
+      position: relative;
+      transform: scale(0.6);
+    }
+  
+    .shape3 {
+      top: -1010px;
+      left: 2px;
+      position: relative;
+      transform: scale(0.4); /* Slightly enlarge */
+    }
+
+
+    .profileContainer {
+      position: relative;
+      display: inline-flex; /* Ensures it aligns properly */
+      align-items: center;
+    }
+    
+    .profilePic {
+      cursor: pointer;
+    }
+    
+    .dropdownMenu {
+      position: absolute;
+      top: calc(100% + 5px); /* Slightly below the profile picture */
+      left: 50%;
+      transform: translateX(-50%); /* Centers the menu */
+      background: white;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      display: none;
+      min-width: 150px;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    
+    .dropdownMenu.active {
+      display: block;
+    }
+}    
+/* Profile Container */
+.profileContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Small Profile Icon in Navbar */
+.profilePic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.profilePic:hover {
+  transform: scale(1.1);
+}
+
+/* Dropdown Menu */
+.profileDropdown {
+  position: absolute;
+  top: 50px; /* Adjust as needed */
+  right: 0;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1101; /* Higher than modal */
+}
+
+/* Enlarged Profile Picture Inside Dropdown */
+.largeProfilePic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Email Text */
+.userEmail {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Sign Out Button */
+.signOutButton {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.signOutButton:hover {
+  background-color: #9827ae;
+}
+/* Modal Overlay (Covers Screen But Doesn't Remove Content) */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Lower than profile icon */
+}
+
+/* Subscription Modal (Stays On Top But Below Profile) */
+.subscriptionModal {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  width: 80%;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1001; /* Lower than profile icon */
+}
+
+/* Keep Profile Icon Visible */
+.profileContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1101; /* Higher than the modal */
+}
+
+.profilePic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1102; /* Ensures it's above the modal */
+}
+
+/* Subscription Plans Layout */
+.subscriptionPlans {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Each Plan */
+.planCard {
+  background: #f8f9ff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6a5acd;
+}
+
+.oldPrice {
+  font-size: 16px;
+  text-decoration: line-through;
+  color: gray;
+  margin-left: 5px;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .subscriptionPlans {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .planCard {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+}

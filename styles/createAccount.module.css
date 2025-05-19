@@ -1,0 +1,152 @@
+.Login {
+    text-align: center;
+  }
+  
+  .mangoPic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+  
+  .h1Message {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .loginBox {
+    margin-top: 20px;
+    width: 400px; /* Adjusted width to increase input size */
+    background-color: #FFDD6C; 
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .Email, .Password, .ConfirmPassword {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    text-align: left;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .inputStyles {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .error {
+    margin-top: 10px;
+    color: red;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+  }
+  
+  .submitButton {
+    background-color: #FFA500; /* Orange color for button */
+    color: #333;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submitButton:hover {
+    background-color: #FF8C00; /* Darker orange on hover */
+  }
+  
+  .messageContainer {
+    margin-top: 20px;
+  }
+  
+  .message {
+    font-size: 16px;
+    color: green;
+  }
+  
+  .backButton {
+    background-color: #0173F1; /* Blue color for button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .backButton:hover {
+    background-color: #015BB5; /* Darker blue on hover */
+  }
+  
+  .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFDD6C;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  }
+  
+  .checkIcon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .modalMessage {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .confirmButton {
+    background-color: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .confirmButton:hover {
+    background-color: #0077cc;
+  }
+  

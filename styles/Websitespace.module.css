@@ -1,0 +1,760 @@
+.container {
+  display: flex; /* Sidebar and workspace in one row */
+  height: 300px; /* Full viewport height */
+  width: 300px; /* Full viewport width */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  z-index: 1;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  position: fixed; /* Keep it in place */
+  top: 20px; /* Adjust to match your design */
+  left: 30px; /* Adjust to match your design */
+  width: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  z-index: 9999; /* Ensure it's above everything */
+  pointer-events: auto;
+}
+
+.logo {
+  width: 55px;
+  height: 45px;
+  margin-right: 15px;
+  position: relative;
+  left: 12px;
+}
+
+.bar .dropdown{
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  position: relative;
+  right: 25px;
+  top: -2px;
+}
+.titleInput {
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.headerActions {
+  display: flex;
+}
+
+.addButton {
+  font-size: 24px;
+  border: none;
+  background-color: #6a0dad;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 10px;
+  top: 100px;
+  width: 200px;
+  height: 180px; /* ✅ This is what you want */
+  background: #e3eaf0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 1000;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.sidebar.expanded {
+  width: 300px;
+  height: 550px; /* 👈 Taller height when expanded */
+}
+
+
+.toolsSection {
+  padding: 10px;
+}
+
+.searchInput {
+  width: calc(100% - 20px); /* ✅ Full width minus padding */
+  margin: 10px;              /* ✅ Adds breathing room */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;    /* ✅ Includes padding in width */
+  display: block;
+}
+
+.panelContent {
+  width: 100%; /* ✅ Full width */
+  box-sizing: border-box; /* ✅ Includes padding in total width */
+  padding: 10px; /* Adjust if needed */
+  overflow-y: auto;
+}
+
+
+.sidebar.expanded .panelContent {
+  width: 100%;
+  display: block;
+}
+
+
+.toolOptions h4 {
+  margin: 10px 0;
+}
+
+.lineOptions {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+
+.line {
+  background-color: black;
+}
+
+
+/* Main Workspace */
+.workspace {
+  position: fixed; /* Ensure it covers the full screen */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.canvas {
+  position: relative;
+  flex: 1;
+  background-color: #f0f0f0;
+  cursor: crosshair;
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+}
+
+.footerActions {
+  display: flex;
+  gap: 10px;
+}
+
+.zoomSelect {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.lines {
+position: absolute;
+width: 100%;
+height: 100%;
+pointer-events: none; /* Allow mouse clicks through the SVG */
+
+}
+.lines line {
+pointer-events: visibleStroke; /* Enable line deletion in eraser mode */
+}
+
+.toolOptions button {
+display: block;
+margin: 5px 0;
+}
+
+
+.element {
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+min-width: 50px;
+min-height: 50px;
+cursor: move; /* Show move cursor for dragging */
+overflow: visible;
+}
+
+.element.rectangle {
+  background-color: lightblue;
+  border: 1px solid black;
+  width: 120px; /* Default width for rectangles */
+  height: 60px; /* Default height for rectangles */
+}
+
+.element.circle {
+background-color: lightgreen;
+border-radius: 50%;
+}
+
+.element:hover {
+opacity: 0.8;
+cursor: pointer;
+}
+
+.addButton:hover {
+background-color: #7b1fa2; /* Slightly darker shade */
+}
+
+.element:active {
+transform: scale(0.95); /* Adds a pressed effect */
+}
+
+.activeButton {
+background-color: #ff4d4d; /* Red to indicate active eraser mode */
+}
+
+
+.resizeHandle {
+position: absolute;
+width: 10px;
+height: 10px;
+background: black;
+bottom: 0;
+right: 0;
+cursor: se-resize;
+}
+
+
+
+.element.weakEntity {
+background-color: lightblue;
+border: 2px solid black;
+position: relative;
+}
+
+.element.weakEntity::before {
+content: "";
+position: absolute;
+top: 5px;
+left: 5px;
+right: 5px;
+bottom: 5px;
+border: 1px solid black;
+pointer-events: none;
+}
+.element.weakEntity::before {
+content: "";
+position: absolute;
+top: 4px; /* Adjust for the spacing from the outer border */
+left: 4px;
+right: 4px;
+bottom: 4px;
+border: 1px solid black; /* Inner border line */
+pointer-events: none; /* Ensure interactions target the main element */
+}
+
+
+.element.attribute {
+border-radius: 50%;
+background-color: #f9f9a1;
+}
+
+.element.multiValuedAttribute {
+border: 2px solid black;
+border-radius: 50%;
+background-color: #fffacd;
+}
+
+.element.derivedAttribute {
+border: 2px dashed black;
+border-radius: 50%;
+background-color: #ffe4c4;
+}
+
+.element.relationship {
+width: 100px;
+height: 100px;
+clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+background-color: lightgreen;
+}
+
+.element.identifyingRelationship {
+border: 2px solid black;
+clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+background-color: #90ee90;
+}
+
+.element.triangle {
+clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+background-color: lightcoral;
+}
+
+.lineTypeOptions button {
+margin: 5px 0;
+padding: 5px 10px;
+cursor: pointer;
+border: 1px solid #ccc;
+background-color: white;
+border-radius: 5px;
+}
+
+.lineTypeOptions .activeLineType {
+background-color: #6a0dad;
+color: white;
+font-weight: bold;
+}
+
+.line {
+  position: absolute;
+  background-color: black;
+  height: 2px; /* Actual line thickness */
+  cursor: move; /* Allow dragging */
+}
+
+
+
+
+
+
+.element.doubleLine {
+  position: relative; /* Ensure pseudo-elements are positioned relative to the parent */
+  background-color: transparent; /* Transparent background for the container */
+  width: 150px; /* Defa ult width for double lines */
+  height: 2px; /* Line thickness of each individual line */
+}
+
+.element.doubleLine::before,
+.element.doubleLine::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Thickness of each line */
+  background-color: black;
+}
+
+.element.doubleLine::before {
+  top: -2px; /* Space above */
+}
+
+.element.doubleLine::after {
+  top: 2px; /* Space below */
+}
+
+
+.toolOptions button {
+display: block;
+margin: 5px 0;
+}
+
+.element:hover,
+.line:hover,
+.doubleLine:hover {
+opacity: 0.8;
+cursor: pointer;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  width: 250px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.title-bar .icon {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  margin-right: 8px;
+}
+
+.title-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.title-bar .dropdown {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.title-bar .dropdown img {
+  width: 5px;
+  height: 5px;
+}
+
+.nameInput{
+  width: 200px;
+  height: 25px;
+  position: relative;
+  top: -1px;
+  right: 45px;
+}
+
+.topBar {
+  position: fixed;
+  top: 20px; /* Move near top */
+  right: 20px; /* Stick to right corner */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   gap: 10px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.topBar img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+  
+.topBar:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+  
+  
+.accicon{
+  width: 39px;
+  height: 39px;
+  cursor: pointer; 
+  transition: transform 0.2s ease;
+  position: relative;
+  right: 4px;
+}
+.addicon, .Popularicon {
+  width: 27px;
+  height: 27px;
+  cursor: pointer; 
+  transition: transform 0.2s ease; 
+}
+  
+.accicon:hover, .addicon:hover, .Popularicon:hover {
+  transform: scale(1.1); /* Slightly enlarge icons on hover */
+}
+
+.addicon{
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  position: relative;
+  right: 5px;
+  top: 2px;
+}
+
+.Popularicon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  right: 4px;
+}
+
+.sorticon{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.separator {
+  width: 1px;
+  height: 30px; 
+  background-color: #ccc;
+  margin: 0 1px;
+  position: relative;
+  right: 5px;
+}
+
+.graphContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px; /* Adjust grid size */
+  z-index: 0;
+  pointer-events: auto;
+}
+  
+/* Zoom Toolbar (Bottom Bar) */
+.bottomBar {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Zoom Buttons */
+.bottomBar button {
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0 5px;
+  border-radius: 4px;
+}
+
+.bottomBar button:hover {
+  background: #f0f0f0;
+}
+
+.bottomBar button.active {
+  background: #ddd;
+  border-radius: 5px;
+}
+
+/* Zoom Dropdown */
+.zoomDropdown {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+/* Icons */
+.zoomin, .zoomout, .cursor, .hand, .text, .turnleft, .turnright {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.toolbox {
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 90vh;
+  z-index: 10;
+}
+
+.toolbox div {
+  width: 60px;
+  height: 40px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+  z-index: 50;
+}
+
+.toolbox div:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+
+
+
+.toggleButton {
+  width: 50px;
+  height: 50px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.toggleButton img {
+  width: 50px;
+  height: 50px;
+
+}
+
+.sidebarToggle {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #f4f4f4;
+}
+
+.sidebarToggle button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sidebarToggle button:hover {
+  background: #ccc;
+}
+
+.sidebarToggle .activeButton {
+  background: #bbb;
+  font-weight: bold;
+}
+
+.changeBtn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.changeBtn:hover {
+  background-color: #45a049;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sidebarIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.sidebarIcons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebarIcons button img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.sidebarIcons button img:hover {
+  transform: scale(1.1);
+}
+
+.iconLabel {
+  font-size: 12px;
+  color: #6a0dad;
+  font-weight: bold;
+  margin-top: 4px;
+  display: none;
+}
+
+.sidebar.expanded .iconLabel {
+  display: block;
+}
+

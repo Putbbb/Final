@@ -1,0 +1,465 @@
+/* Ensure the background color covers the entire page */
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  min-height: 100vh; /* Make sure it covers at least the full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f3f8; /* Match the body background color */
+}
+
+.bar {
+  width: 100%;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.sidebar {
+  width: 15%;
+  background-color: #ffffff; /* Sidebar background color */
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 10px;
+  position:fixed;
+  top: 200px; /* Adjust to be below the top bar */
+  left: -10px;
+  overflow-y: auto;
+}
+
+.logo {
+  width: 100px;
+  margin: 50px 35px;
+
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  padding: 10px 30px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.sidebar ul li:hover,
+.sidebar ul .active {
+  background-color: #5067eb;
+  color: white;
+}
+
+.main {
+  margin-right: 600px;
+  margin-bottom: 180px; /* Adjust to be below the top bar */
+  padding: 20px;
+  flex: 1;
+  z-index: 1;
+}
+
+.header {
+  margin-top: 200px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: calc(15% + 10px);  /* Align with project container */
+  padding-right: 15%; /* Align with right panel */
+  box-sizing: border-box;
+  z-index: 1001; /* ⬅️ Add this line */
+  position: relative; /* ⬅️ Required for z-index to take effect */
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  margin-right: 150px;
+}
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  margin-left: calc(15% + 10px);
+}
+
+
+.searchInput {
+  width: 500px;
+  max-width: 90vw;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.searchInput:hover {
+  border-color: #5067eb;
+}
+
+
+
+.projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Exactly 4 per row */
+  gap: 36px 36px; /* uniform spacing */
+  padding: 40px 60px;
+  box-sizing: border-box;
+  justify-items: center;
+  margin-left: calc(30% + 20px); /* center cards inside each column */
+}
+
+
+
+
+.projectCard {
+  background: #f0f0f0;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
+  padding: 20px;
+  width: 200px; /* fixed width */
+  height: 150px; /* good height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border: 1px solid #e2e2e2;
+}
+
+
+
+
+
+
+
+
+.projectCard:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(145deg, #fefefe, #f0f0f6);
+}
+
+.projectCard h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.projectMeta {
+  font-size: 12px;
+  color: #777;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.optionsMenu {
+  position: absolute;
+  bottom: 45px; /* ⬆️ above the 3-dot */
+  right: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+
+.optionsButton {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 1; /* Always visible */
+  transition: color 0.2s ease;
+}
+
+.optionsButton:hover {
+  color: #000; /* Slight darken on hover */
+}
+.optionsMenu button {
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.optionsMenu button:hover {
+  background-color: #f0f0f0;
+}
+
+.projectType{
+  font-size: 19px;
+  color: #888;
+  margin-top: 480px;
+
+}
+
+.topBar {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  gap: 12px; /* ✅ Smaller consistent spacing */
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 18px;
+  z-index: 1000;
+}
+
+
+.topBar:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.accicon{
+  width: 39px;
+  height: 39px;
+  cursor: pointer; 
+  transition: transform 0.2s ease; 
+}
+.listicon, .icon, .sorticon {
+  width: 27px;
+  height: 27px;
+  cursor: pointer; 
+  transition: transform 0.2s ease; 
+}
+
+.accicon:hover, .listicon:hover, .icon:hover, .sorticon:hover {
+  transform: scale(1.1); /* Slightly enlarge icons on hover */
+}
+
+.listicon{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.sorticon{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+
+.rightPanel {
+  position: fixed;
+  right: 0;
+  top: 100px; /* Adjust to be below the top bar */
+  width: 15%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  background-color: #ffffff; /* Match sidebar color */
+  border-radius: 10px;
+}
+
+.createProjectButton {
+  background-color: #5067eb;
+  color: white;
+  padding: 8px 14px;
+  margin-left: 6px; /* ✅ slight separation */
+  border: none;
+  border-radius: 18px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.createProjectButton:hover {
+  background-color: #4058d6;
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 200px;
+  z-index: 1000;
+}
+
+.dropdownItem {
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdownItem p {
+  font-size: 12px;
+  color: #555;
+}
+
+.dropdownItem:hover {
+  background-color: #f3f3f3;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 25%; /* Shrink sidebar width for smaller screens */
+  }
+
+  .main {
+    margin-left: 50%; /* Adjust main content to fit smaller sidebar */
+  }
+
+  .rightPanel {
+    width: 100%; /* Adjust right panel to full width */
+    position: relative; /* Make it flow with content */
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .topBar {
+    right: 10px;
+    left: 10px;
+    justify-content: space-between;
+  }
+}
+
+
+.projectImage {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.projectDetails {
+  margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  .projectsContainer {
+    grid-template-columns: repeat(3, minmax(240px, 1fr)); /* 3 cards */
+  }
+}
+
+@media (max-width: 900px) {
+  .projectsContainer {
+    grid-template-columns: repeat(2, minmax(240px, 1fr)); /* 2 cards */
+  }
+}
+
+@media (max-width: 600px) {
+  .projectsContainer {
+    grid-template-columns: repeat(1, minmax(240px, 1fr)); /* 1 card */
+  }
+}
+
+
+@media (max-width: 1400px) {
+  .projectsContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .projectsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .projectsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .projectsContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  background-color: #eef1fb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #5067eb;
+  margin-bottom: 10px;
+}
