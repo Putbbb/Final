@@ -1,23 +1,25 @@
-// pages/wireframe.jsx
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import WireframeFromSQL from "../components/WireframeFromSQL";
 import { parseSQL } from "../utils/sqlParser";
 
 export default function WireframePage() {
   const [sql, setSql] = useState("");
   const [parsed, setParsed] = useState([]);
+  const [fileName, setFileName] = useState("Untitled");
 
   useEffect(() => {
-    // Automatically get SQL from localStorage
     const storedSql = localStorage.getItem("generatedSQL");
+    const storedName = localStorage.getItem("projectName");
     if (storedSql) {
       setSql(storedSql);
-      const parsedResult = parseSQL(storedSql);
-      setParsed(parsedResult);
+      setParsed(parseSQL(storedSql));
+    }
+    if (storedName) {
+      setFileName(storedName);
     }
   }, []);
 
-  return (
+    return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">Wireframe Preview</h1>
       {parsed.length === 0 ? (

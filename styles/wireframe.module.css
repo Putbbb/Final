@@ -1,82 +1,377 @@
 .container {
   display: flex;
-  height: 100%;
-  background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
-  padding: 20px;
-  gap: 20px;
-  overflow: auto;
+  height: 80vh;
+  width: 80vw;
+  background-color: #f0f2f5;
 }
 
 .sidebar {
-  width: 240px;
-  background: white;
+  width: 250px;
+  background-color: white;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-  font-size: 14px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
 }
 
-.sidebar h2 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 12px;
+.sidebar h2,
+.sectionHeader {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 16px 0 8px;
 }
 
-.sidebar h3 {
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 16px;
-  color: #333;
+.column {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 4px;
 }
 
 .main {
   flex: 1;
-  padding: 10px;
+  padding: 24px;
   overflow-y: auto;
 }
 
+.header {
+  margin-bottom: 24px;
+}
+
 .searchBar {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
   width: 100%;
-  font-size: 14px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tab,
+.activeTab {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.activeTab {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.tab {
+  background-color: #e2e8f0;
+  color: #333;
 }
 
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
 }
 
 .card {
   background: white;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.lessonSection {
+  margin-bottom: 40px;
+}
+
+.subheader {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.lessonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.lessonTile {
+  background-color: white;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+
+
+.smallColumn {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.examSection {
+  background: white;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.examItem {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.examType {
+  color: #777;
+}
+
+.containerHorizontal {
+  display: flex;
+  flex-direction: row;
+  height: 70vh;
+  width: 80vw;
+  margin-left: 200px;
+  margin-top: 200px;
+}
+
+.sidebarHorizontal {
+  width: 220px;
+  background-color: white;
+  padding: 16px;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.mainHorizontal {
+  flex: 1;
+  overflow-x: auto;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(to right, #e0e7ff, #f0f4ff);
+}
+
+.horizontalScrollSection {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.cardHorizontal {
+  min-width: 220px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lessonTileHorizontal {
+  min-width: 160px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+.sidebarMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarMenu li {
+  padding: 8px 0;
+  font-weight: 500;
+}
+
+.featuredBanner {
+  margin: 20px 0;
+}
+
+.featureBox {
+  height: 160px;
+  background: #d9e4ff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.thumbnailCard {
+  min-width: 160px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.thumbnail {
+  height: 100px;
+  background: #cbd5e1;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.caption {
+  font-size: 14px;
+  color: #333;
+}
+
+.examCard {
+  min-width: 200px;
+  background: #fff7ed;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.examTitle {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.examDate {
+  font-size: 14px;
+  color: #555;
+}
+
+.sidebarHorizontal {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #ccc;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logoBox {
+  width: 100%;
+  height: 50px;
+  background: #ccc;
+  margin-bottom: 8px;
+}
+
+.menuSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menuButton {
+  padding: 8px 12px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
   font-size: 14px;
 }
 
-.card h3 {
+.menuButton:hover {
+  background-color: #ddd;
+}
+
+.subSection {
+  margin-top: 16px;
+}
+
+.subHeader {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.subItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.subIcon {
+  font-size: 12px;
+  color: #666;
+}
+
+.subBar {
+  width: 100px;
+  height: 8px;
+  background-color: #bbb;
+}
+
+.bar {
+  position: fixed; /* Keep it in place */
+  top: 20px; /* Adjust to match your design */
+  left: 30px; /* Adjust to match your design */
+  width: auto;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  z-index: 9999; /* Ensure it's above everything */
+  pointer-events: auto;
+}
+
+.bar .dropdown{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  position: relative;
+  right: 14px;
+  top: 1px;
+}
+
+.logo {
+  width: 55px;
+  height: 45px;
+  margin-right: 15px;
+  position: relative;
+  left: 12px;
+}
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+.exportTopRight {
+  position: absolute;
+  top: 150px;
+  right: 250px;
+  z-index: 1000;
+}
+
+.exportBtn {
+  background-color: #5a6ff0;
+  color: white;
+  font-weight: 500;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #111;
+  transition: background-color 0.3s ease;
 }
 
-.card label {
-  display: block;
-  margin-bottom: 10px;
+.exportBtn:hover {
+  background-color: #4254d2;
 }
 
-.card input,
-.card select,
-.card textarea {
-  width: 100%;
-  padding: 6px 10px;
-  margin-top: 4px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 13px;
+.topic{
+  position: absolute;
+  top: 130px;
+  left: 200px;
+  z-index: 1000;
+
 }
